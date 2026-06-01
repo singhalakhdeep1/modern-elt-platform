@@ -1,0 +1,35 @@
+{
+    "sources": [
+        {
+            "name": "crm",
+            "tables": [
+                "accounts",
+                "opportunities",
+                "contacts"
+            ]
+        },
+        {
+            "name": "billing",
+            "tables": [
+                "subscriptions",
+                "invoices",
+                "refunds"
+            ]
+        },
+        {
+            "name": "support",
+            "tables": [
+                "tickets",
+                "sla_events"
+            ]
+        },
+        {
+            "name": "product",
+            "tables": [
+                "events",
+                "workspaces",
+                "users"
+            ]
+        }
+    ]
+}

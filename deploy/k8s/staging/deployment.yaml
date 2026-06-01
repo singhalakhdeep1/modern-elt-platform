@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: modern-elt-platform-worker
+  namespace: staging
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: modern-elt-platform-worker
+  template:
+    metadata:
+      labels:
+        app: modern-elt-platform-worker
+    spec:
+      containers:
+        - name: worker
+          image: ghcr.io/alakhdeepsingh/modern-elt-platform:staging
+          command: ["python", "run_local_demo.py"]

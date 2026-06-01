@@ -1,0 +1,17 @@
+groups:
+  - name: modern-elt-platform-alerts
+    rules:
+      - alert: QualityCheckFailures
+        expr: rate(data_quality_failures_total{job="modern-elt-platform"}[10m]) > 0
+        for: 10m
+        labels:
+          severity: critical
+        annotations:
+          summary: Data quality checks are failing
+      - alert: FreshnessSLOBreach
+        expr: max(data_freshness_minutes{job="modern-elt-platform"}) > 15
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: Data freshness SLO breached

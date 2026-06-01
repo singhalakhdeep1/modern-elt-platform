@@ -1,0 +1,7 @@
+{
+    "project": "modern-elt-platform",
+    "type": "throughput",
+    "thresholds": {
+        "rows_per_sec_min": 30000
+    }
+}

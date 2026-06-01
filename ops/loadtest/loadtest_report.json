@@ -1,0 +1,7 @@
+{
+  "workload": "extractor_row_generation",
+  "iterations": 6000,
+  "rows_generated": 12000,
+  "duration_sec": 0.09,
+  "rows_per_sec": 129279.98
+}

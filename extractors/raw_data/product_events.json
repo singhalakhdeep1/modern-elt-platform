@@ -1,0 +1,24 @@
+[
+  {
+    "source": "product",
+    "table": "events",
+    "row_id": "events_001",
+    "payload": {
+      "status": "active",
+      "amount": 1200,
+      "region": "IN"
+    },
+    "ingested_at": "2026-06-01T05:00:31.108429+00:00"
+  },
+  {
+    "source": "product",
+    "table": "events",
+    "row_id": "events_002",
+    "payload": {
+      "status": "active",
+      "amount": 3200,
+      "region": "US"
+    },
+    "ingested_at": "2026-06-01T05:00:31.108429+00:00"
+  }
+]
