@@ -75,3 +75,9 @@ python -m unittest discover -s . -p "test_*.py"
 - Uniqueness checks on key identifiers
 - Accepted values for status fields
 - Null-threshold alerts on critical columns
+
+---
+
+## License
+
+Proprietary - All rights reserved.
