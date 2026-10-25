@@ -1,0 +1,75 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: Raw JSON sources loaded by extractors/loader.py
+
+    tables:
+      - name: crm_accounts
+        description: CRM customer accounts
+        columns:
+          - name: account_id
+            tests: [unique, not_null]
+          - name: status
+            tests: [not_null]
+
+      - name: crm_contacts
+        description: CRM contacts per account
+        columns:
+          - name: contact_id
+            tests: [unique, not_null]
+
+      - name: crm_opportunities
+        description: Sales pipeline opportunities
+        columns:
+          - name: opp_id
+            tests: [unique, not_null]
+
+      - name: billing_subscriptions
+        description: Active and historical subscriptions
+        columns:
+          - name: sub_id
+            tests: [unique, not_null]
+
+      - name: billing_invoices
+        description: All invoices raised
+        columns:
+          - name: invoice_id
+            tests: [unique, not_null]
+
+      - name: billing_refunds
+        description: Refunds issued
+        columns:
+          - name: refund_id
+            tests: [unique, not_null]
+
+      - name: support_tickets
+        description: Customer support tickets
+        columns:
+          - name: ticket_id
+            tests: [unique, not_null]
+
+      - name: support_sla_events
+        description: SLA tracking events per ticket
+        columns:
+          - name: sla_id
+            tests: [unique, not_null]
+
+      - name: product_users
+        description: Product users
+        columns:
+          - name: user_id
+            tests: [unique, not_null]
+
+      - name: product_workspaces
+        description: Product workspaces
+        columns:
+          - name: workspace_id
+            tests: [unique, not_null]
+
+      - name: product_events
+        description: Product usage events
+        columns:
+          - name: event_id
+            tests: [unique, not_null]

@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  elt-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: modern-elt-pipeline
+    environment:
+      - DBT_DUCKDB_PATH=/app/data/warehouse.duckdb
+    volumes:
+      - ./data:/app/data
+      - ./extractors/raw_data:/app/extractors/raw_data
+      - ./data_quality:/app/data_quality
+    command: python run_local_demo.py
+
+  dbt-docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: modern-elt-dbt-docs
+    environment:
+      - DBT_DUCKDB_PATH=/app/data/warehouse.duckdb
+    volumes:
+      - ./data:/app/data
+    working_dir: /app/dbt
+    command: >
+      sh -c "dbt docs generate --profiles-dir . &&
+             dbt docs serve --profiles-dir . --port 8080"
+    ports:
+      - "8080:8080"
+    depends_on:
+      elt-pipeline:
+        condition: service_completed_successfully
